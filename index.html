@@ -43,11 +43,10 @@ button{font:inherit;color:inherit}
 .doc-org{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;font-size:13px;color:var(--ink-2);border-bottom:2px solid var(--navy);padding-bottom:8px}
 .doc-org b{color:var(--navy)}
 .doc-org .r{display:flex;align-items:center;gap:12px}
-.lang{position:relative;display:inline-grid;grid-template-columns:1fr 1fr;background:var(--tint);border:1px solid var(--line);border-radius:999px;padding:3px}
-.lang .thumb{position:absolute;top:3px;bottom:3px;left:3px;width:calc(50% - 3px);border-radius:999px;background:var(--navy);transition:transform .28s cubic-bezier(.3,.7,.2,1)}
-html[data-lang="en"] .lang .thumb{transform:translateX(100%)}
-.lang button{position:relative;z-index:1;border:0;background:none;font-weight:600;font-size:13px;line-height:1;padding:8px 13px;border-radius:999px;color:var(--ink-2);cursor:pointer;min-width:70px}
-.lang button[aria-pressed="true"]{color:#fff}
+.lang{display:inline-flex;border:1px solid var(--navy);border-radius:4px;overflow:hidden}
+.lang button{border:0;background:#fff;font-weight:600;font-size:13px;line-height:1;padding:7px 0;width:72px;text-align:center;color:var(--navy);cursor:pointer}
+.lang button+button{border-left:1px solid var(--navy)}
+.lang button[aria-pressed="true"]{background:var(--navy);color:#fff}
 .doc-title{border:2px solid var(--navy);border-left-width:10px;padding:18px 22px;display:flex;flex-direction:column;gap:6px;margin-top:14px}
 .doc-title h1{font-size:clamp(22px,3.4vw,32px);font-weight:900;color:var(--navy);letter-spacing:-.01em}
 .doc-title p{color:var(--ink-2);font-size:14px}
@@ -225,9 +224,9 @@ tr.jump:hover td{background:var(--tint)}
 
 <header>
   <div class="doc-org">
-    <span><b><span class="ko">항공안전보안실 항공보안팀</span><span class="en" lang="en">Aviation Safety &amp; Security · AVSEC Team</span></b> · <span class="ko">교육영상 제작</span><span class="en" lang="en">Training video</span></span>
+    <span><b><span class="ko">항공안전보안실 항공보안팀</span><span class="en" lang="en">SELOY</span></b> · <span class="ko">교육영상 제작</span><span class="en" lang="en">Training video</span></span>
     <span class="r"><span class="mono">2026. 10. 27.</span>
-      <span class="lang" role="group" aria-label="언어 / Language"><span class="thumb" aria-hidden="true"></span><button type="button" data-set="ko" aria-pressed="true">한국어</button><button type="button" data-set="en" aria-pressed="false" lang="en">English</button></span></span>
+      <span class="lang" role="group" aria-label="언어 / Language"><button type="button" data-set="ko" aria-pressed="true">한국어</button><button type="button" data-set="en" aria-pressed="false" lang="en">English</button></span></span>
   </div>
   <div class="doc-title">
     <h1><span class="ko">Pilot Safety Meeting 교육영상 제작 컨셉</span><span class="en" lang="en">Pilot Safety Meeting · Training Video Concept</span></h1>
@@ -236,25 +235,14 @@ tr.jump:hover td{background:var(--tint)}
   </div>
 </header>
 
-<div class="gist">
-  <div class="gist-h"><span class="ko">보고 요지</span><span class="en" lang="en">Summary</span></div>
-  <ul class="k sq">
-    <li><span class="ko">10/28(수) 09:45 발표를 휴대폰 3대로 촬영해 운항승무원 대상 12분 하이라이트 교육영상으로 제작함</span><span class="en" lang="en">The 09:45 talk on Wed 28 Oct is filmed on three phones and edited into a 12-minute highlight for pilots.</span></li>
-    <li><span class="ko">정면(A캠)·측면(B캠)·클로즈업을 교차해 강의 화면의 단조로움을 없애고, 국문 자막 위에 영문 원문을 함께 표시함</span><span class="en" lang="en">Front (A cam), side (B cam) and close-ups are intercut so the lecture never looks static. Korean subtitles lead, with the English original above.</span></li>
-    <li><span class="ko">항공기 장면은 오프닝·엔딩 2컷으로 줄이고, 본문은 내용과 맞닿은 그래픽·현장 컷으로 채움 (Ⅱ장 콘티 재생으로 흐름 확인)</span><span class="en" lang="en">Aircraft footage is cut to two shots, opening and ending. The body uses graphics and on-site shots tied to the content (play the storyboard in section Ⅱ).</span></li>
-    <li><span class="ko">참석자 얼굴·편명·공항명 미노출 등 비식별 원칙을 적용함 (Ⅳ장)</span><span class="en" lang="en">De-identification applies throughout: no attendee faces, flight numbers or airports (section Ⅳ).</span></li>
-  </ul>
-</div>
-
 <section id="s1">
   <div class="ch-h"><span class="num">Ⅰ.</span><h2><span class="ko">개요</span><span class="en" lang="en">Overview</span></h2></div>
   <div class="tw"><table><tbody>
-    <tr><th><span class="ko">목적</span><span class="en" lang="en">Purpose</span></th><td><span class="ko">SVP 11월 초 출장 기간 중 운항승무원 대상 안전 브리핑 대체 (FOQA 운영체계 개편·KPSP·Two-Crew Rule 전파)</span><span class="en" lang="en">Stands in for the pilot safety briefing while the SVP travels in early November (FOQA reform, KPSP, Two-Crew Rule)</span></td></tr>
-    <tr><th><span class="ko">촬영 일시</span><span class="en" lang="en">Recording</span></th><td><span class="ko">2026. 10. 28.(수) 09:45~10:15 발표 (현장 세팅 09:10, 현장 컷 촬영 09:15~09:40 / 10:15~10:40)</span><span class="en" lang="en">Wed 28 Oct 2026, talk 09:45–10:15 (set-up 09:10; on-site shots 09:15–09:40 and 10:15–10:40)</span></td></tr>
+    <tr><th><span class="ko">촬영 일시</span><span class="en" lang="en">Recording</span></th><td><span class="ko">2026. 10. 28.(수) 09:45~10:15 발표 (현장 세팅 09:10, 현장 컷 촬영 09:15~09:40 / 10:15~10:40)</span><span class="en" lang="en">Wed 28 Oct 2026, talk 09:45-10:15 (set-up 09:10; on-site shots 09:15-09:40 and 10:15-10:40)</span></td></tr>
     <tr><th><span class="ko">발표</span><span class="en" lang="en">Presenter</span></th><td><span class="ko">Bennet Walsh 전무 (Corporate Aviation Safety &amp; Security) · 영어 발표, 슬라이드 10장</span><span class="en" lang="en">SVP Bennet Walsh (Corporate Aviation Safety &amp; Security) · in English, 10 slides</span></td></tr>
     <tr><th><span class="ko">시청 대상</span><span class="en" lang="en">Audience</span></th><td><span class="ko">당사 운항승무원 (사내 한정 배포)</span><span class="en" lang="en">Korean Air pilots (internal distribution only)</span></td></tr>
     <tr><th><span class="ko">산출물</span><span class="en" lang="en">Deliverables</span></th><td><span class="ko">하이라이트본 12:00 (국문 자막 + 영문 원문 병기) · 풀버전 약 28분 (기록 보존용)</span><span class="en" lang="en">12:00 highlight (Korean subtitles with the English original) · full version, about 28 min (archive)</span></td></tr>
-    <tr><th><span class="ko">촬영 인원</span><span class="en" lang="en">Crew</span></th><td><span class="ko">3명 (촬영① A캠 정면·총괄 / 촬영② B캠 측면·오디오 / 촬영③ C캠 현장) · 갤럭시 휴대폰</span><span class="en" lang="en">3 staff (A: front and lead / B: side and audio / C: on-site) · Galaxy phones</span></td></tr>
+    <tr><th><span class="ko">촬영 인원</span><span class="en" lang="en">Crew</span></th><td><span class="ko">3명 (촬영① A캠 정면·총괄 / 촬영② B캠 측면·오디오 / 촬영③ C캠 현장) · 휴대폰 촬영</span><span class="en" lang="en">3 staff (A: front and lead / B: side and audio / C: on-site) · shot on phones</span></td></tr>
     <tr><th><span class="ko">편집</span><span class="en" lang="en">Editing</span></th><td><span class="ko">CapCut 데스크톱 · 1080p 30fps 출력 · 로컬 저장</span><span class="en" lang="en">CapCut desktop · 1080p 30fps export · stored locally</span></td></tr>
   </tbody></table></div>
 </section>
@@ -328,13 +316,7 @@ tr.jump:hover td{background:var(--tint)}
       </table></div>
       <div class="sub-h" style="margin-top:6px"><span class="ko">발표자 화면 안의 구도</span><span class="en" lang="en">Presenter framing</span></div>
       <div id="angBars" style="display:flex;flex-direction:column;gap:10px"></div>
-      <div class="ba">
-        <div class="b"><small><span class="ko">1차 콘티 · 항공기 장면</span><span class="en" lang="en">First storyboard · aircraft</span></small><strong id="baBefore"></strong></div>
-        <div class="arr" aria-hidden="true">→</div>
-        <div class="a"><small><span class="ko">수정안 · 항공기 장면</span><span class="en" lang="en">Revised · aircraft</span></small><strong id="baAfter"></strong></div>
       </div>
-      <p class="muted small"><span class="ko">기종별 이착륙 반복 장면을 걷어 내고, 그 시간을 측면 교차 컷과 내용 그래픽(FOQA 비식별·Two-Crew)으로 채움. 사내 영상은 ② 이륙·⑥ 훈련센터·⑦ OC 3건만 필요함.</span><span class="en" lang="en">The repeated takeoffs and landings by aircraft type are gone; that time now goes to side-angle cuts and content graphics (FOQA de-identification, Two-Crew Rule). Only three in-house clips are needed: ② takeoff, ⑥ training centre, ⑦ OC.</span></p>
-    </div>
   </div>
 </section>
 
@@ -369,14 +351,13 @@ tr.jump:hover td{background:var(--tint)}
         <p><span class="ko">발표 전 구간 연속 녹화(4K). 줌 없이 찍고 클로즈업은 편집에서 크롭함. 핀마이크로 주 음성 확보.</span><span class="en" lang="en">Records the whole talk in 4K. No zoom; close-ups are cropped in the edit. Main audio via a lapel mic.</span></p></div></div>
       <div class="fp-role"><span class="ic" style="background:var(--c-side)">B</span><div>
         <h3><span class="ko">B캠 · 측면 고정</span><span class="en" lang="en">B cam · side, fixed</span></h3>
-        <p><span class="ko">발표자 옆 벽면에서 프로필 구도로 촬영. 스크린 빛을 역광으로 써서 실루엣 컷도 확보함. 백업 녹음 병행.</span><span class="en" lang="en">Films the presenter in profile from the side wall and uses the screen light for silhouette takes. Also runs the backup audio.</span></p>
-        <span class="chg"><span class="ko">1차 계획 대비 변경: 와이드 백업 → 측면 전담</span><span class="en" lang="en">Changed from first plan: wide backup → dedicated side angle</span></span></div></div>
+        <p><span class="ko">발표자 옆 벽면에서 프로필 구도로 촬영. 스크린 빛을 역광으로 써서 실루엣 컷도 확보함. 백업 녹음 병행.</span><span class="en" lang="en">Films the presenter in profile from the side wall and uses the screen light for silhouette takes. Also runs the backup audio.</span></p></div></div>
       <div class="fp-role"><span class="ic" style="background:var(--c-ccam)">C</span><div>
         <h3><span class="ko">C캠 · 현장 이동</span><span class="en" lang="en">C cam · roaming</span></h3>
         <p><span class="ko">회의 전후 전경과 디테일, 회의 중에는 청중 뒤에서 원거리 컷. 참석자 얼굴은 찍지 않음.</span><span class="en" lang="en">Wides and details before and after; during the talk, long shots from behind the audience. No attendee faces.</span></p></div></div>
     </div>
   </div>
-  <div class="fp-common"><b><span class="ko">공통</span><span class="en" lang="en">All cameras</span></b> · <span class="ko">갤럭시 프로 동영상 모드, 3대 화이트밸런스 동일값, 비행기 모드. 삼각대가 없으면 책상·의자에 기대어 고정함.</span><span class="en" lang="en">Galaxy Pro Video mode, identical white balance on all three, airplane mode on. Without tripods, phones are braced on desks or chairs.</span></div>
+  <div class="fp-common"><b><span class="ko">공통</span><span class="en" lang="en">All cameras</span></b> · <span class="ko">프로 동영상 모드, 3대 화이트밸런스 동일값, 비행기 모드. 삼각대가 없으면 책상·의자에 기대어 고정함.</span><span class="en" lang="en">Pro video mode, identical white balance on all three, airplane mode on. Without tripods, phones are braced on desks or chairs.</span></div>
   <div class="tabs" role="tablist" id="tabs"></div>
   <div id="panels"></div>
 </section>
@@ -399,11 +380,11 @@ tr.jump:hover td{background:var(--tint)}
         <li><span class="ko">슬라이드 9 MOLIT 조사 → 진행 중 사안, 게재 여부 사전 승인 (미승인 시 CH4 후반 약 1분 삭제 가능하도록 구성)</span><span class="en" lang="en">Slide 9 MOLIT investigation → on-going; needs approval before release (the cut allows about a minute of CH4 to be dropped if not approved)</span></li>
       </ul>
     </li>
-    <li><b><span class="ko">수치 기간 표기</span><span class="en" lang="en">Date ranges</span></b>: <span class="ko">FOQA Event는 Jan–Sep, FSI는 Jan–Aug 기준임. 수치 그래픽마다 기간을 명기함</span><span class="en" lang="en">FOQA events cover Jan–Sep and FSI covers Jan–Aug. Every number graphic states its period.</span></li>
+    <li><b><span class="ko">수치 기간 표기</span><span class="en" lang="en">Date ranges</span></b>: <span class="ko">FOQA Event는 Jan-Sep, FSI는 Jan-Aug 기준임. 수치 그래픽마다 기간을 명기함</span><span class="en" lang="en">FOQA events cover Jan-Sep and FSI covers Jan-Aug. Every number graphic states its period.</span></li>
   </ul>
 </section>
 
-<p class="foot"><span class="ko">화면 예시·자막은 발표 슬라이드를 바탕으로 예상한 것이며, 녹화 후 실제 발언 기준으로 갱신함. 발표자 캐릭터는 제공받은 일러스트(정면)와 생성 이미지(측면)를 사용함. 소스 번호 ②⑥⑦은 커뮤니케이션지원팀 자료제공 요청 파일 순번임. 작성: 항공보안팀 박상우 과장 · 사내 검토용</span><span class="en" lang="en">On-screen examples and subtitles are projected from the slides and will be updated from the actual speech. The presenter is drawn from the supplied illustration (front) and a generated image (side). Source numbers ②⑥⑦ refer to the in-house footage request. Prepared by Sangwoo Park, Aviation Security Team · for internal review.</span></p>
+<p class="foot"><span class="ko">화면 예시·자막은 발표 슬라이드를 바탕으로 예상한 것이며, 녹화 후 실제 발언 기준으로 갱신함. 발표자 캐릭터는 제공받은 일러스트(정면)와 생성 이미지(측면)를 사용함. 소스 번호 ②⑥⑦은 커뮤니케이션지원팀 자료제공 요청 파일 순번임. 작성: 항공보안팀 박상우 과장 · 사내 검토용</span><span class="en" lang="en">On-screen examples and subtitles are projected from the slides and will be updated from the actual speech. The presenter is drawn from the supplied illustration (front) and a generated image (side). Source numbers ②⑥⑦ refer to the in-house footage request. Prepared by Sangwu Park, SELOY · for internal review.</span></p>
 
 </div></div>
 
@@ -766,20 +747,20 @@ function gbg(c,t,title){c.fillStyle=LG(c,0,0,W,H,[[0,'#051766'],[1,'#030f3f']]);
 function ap(c,p,at,fn){const a=clamp((p-at)/.08);if(a<=0)return;c.save();c.globalAlpha=a;c.translate(0,(1-a)*14);fn();c.restore();}
 function gcard(c,x,y,w,h,col){c.fillStyle='rgba(255,255,255,.07)';rr(c,x,y,w,h,10);c.fill();c.fillStyle=col;c.fillRect(x,y,8,h);}
 S.wasis=(c,p,t)=>{gbg(c,t,'Transfer of operating ownership');
-  ap(c,p,0,()=>{c.strokeStyle='rgba(240,160,40,.9)';c.lineWidth=2;c.fillStyle='rgba(240,160,40,.14)';rr(c,90,160,470,400,14);c.fill();c.stroke();T(c,'WAS · Flight Operations',120,215,30,'#ffd08a',{w:700});['Weakened anonymity','Delayed mitigation decisions','Longer crew standby'].forEach((s,i)=>T(c,'—  '+s,120,290+i*70,28,'#fff'));});
+  ap(c,p,0,()=>{c.strokeStyle='rgba(240,160,40,.9)';c.lineWidth=2;c.fillStyle='rgba(240,160,40,.14)';rr(c,90,160,470,400,14);c.fill();c.stroke();T(c,'WAS · Flight Operations',120,215,30,'#ffd08a',{w:700});['Weakened anonymity','Delayed mitigation decisions','Longer crew standby'].forEach((s,i)=>T(c,'-  '+s,120,290+i*70,28,'#fff'));});
   ap(c,p,.35,()=>{T(c,'→',640,380,90,'#7fd8ff',{a:'center',b:'middle',w:700});});
-  ap(c,p,.45,()=>{c.strokeStyle='rgba(30,200,150,.95)';c.lineWidth=2;c.fillStyle='rgba(30,200,150,.14)';rr(c,720,160,470,400,14);c.fill();c.stroke();T(c,'IS · Corporate Safety & Security',750,215,28,'#8ef0cc',{w:700});['Robust non-identification','One-stop prompt decisions','Relieving crew strain'].forEach((s,i)=>T(c,'—  '+s,750,290+i*70,28,'#fff'));});};
+  ap(c,p,.45,()=>{c.strokeStyle='rgba(30,200,150,.95)';c.lineWidth=2;c.fillStyle='rgba(30,200,150,.14)';rr(c,720,160,470,400,14);c.fill();c.stroke();T(c,'IS · Corporate Safety & Security',750,215,28,'#8ef0cc',{w:700});['Robust non-identification','One-stop prompt decisions','Relieving crew strain'].forEach((s,i)=>T(c,'-  '+s,750,290+i*70,28,'#fff'));});};
 S.rule=(c,p,t)=>{gbg(c,t,'Special Event rule');const v=Math.round(48*ease(p/.45));T(c,String(v),90,380,230,'#fff',{w:700,f:MONO});T(c,'HOURS',90+(v>9?280:150),380,44,'#7fd8ff',{w:600,f:MONO});
   ap(c,p,.35,()=>{T(c,'Report a particular event or exceedance',90,470,38,'#fff',{w:700});T(c,'to the Safety Team.',90,520,38,'#fff',{w:700});});
   ap(c,p,.55,()=>T(c,'Mitigations are managed exclusively by Corporate Safety.',90,590,26,'rgba(255,255,255,.8)'));};
 S.roadmap=(c,p,t)=>{gbg(c,t,'KPSP implementation roadmap');c.fillStyle='rgba(127,216,255,.25)';c.fillRect(150,330,980,6);c.fillStyle='#00A1DE';c.fillRect(150,330,980*clamp(p*1.25),6);
-  const st=[["STEP 01 · '25 3Q",'Preparation','Completed'],["STEP 02 · '25 4Q–'26 2Q",'Program design','Completed'],['STEP 03 · Oct 7','Pilot operation','In progress'],["STEP 04 · '26 4Q",'Official launch','Planned']];
+  const st=[["STEP 01 · '25 3Q",'Preparation','Completed'],["STEP 02 · '25 4Q-'26 2Q",'Program design','Completed'],['STEP 03 · Oct 7','Pilot operation','In progress'],["STEP 04 · '26 4Q",'Official launch','Planned']];
   st.forEach((s,i)=>ap(c,p,.05+i*.2,()=>{const x=150+i*326;c.fillStyle=i===2?'#00A1DE':i<2?'#7fd8ff':'rgba(255,255,255,.3)';c.beginPath();c.arc(x,333,i===2?20+Math.sin(t*4)*3:14,0,TAU);c.fill();
     gcard(c,x-70,390,280,200,i===2?'#00A1DE':'rgba(127,216,255,.6)');T(c,s[0],x-46,436,18,'#7fd8ff',{f:MONO});T(c,s[1],x-46,486,30,'#fff',{w:700});T(c,s[2],x-46,540,24,i===2?'#7fd8ff':'rgba(255,255,255,.7)');}));};
-S.count494=(c,p,t)=>{gbg(c,t,'Confirmed FOQA events · Jan–Sep 2026');const v=Math.round(494*ease(p/.45));T(c,String(v),90,330,180,'#fff',{w:700,f:MONO});T(c,'EVENTS',90+String(v).length*110+20,330,40,'#7fd8ff',{f:MONO,w:600});
+S.count494=(c,p,t)=>{gbg(c,t,'Confirmed FOQA events · Jan-Sep 2026');const v=Math.round(494*ease(p/.45));T(c,String(v),90,330,180,'#fff',{w:700,f:MONO});T(c,'EVENTS',90+String(v).length*110+20,330,40,'#7fd8ff',{f:MONO,w:600});
   const m=[67,40,65,79,55,57,71,41,19],mo=['J','F','M','A','M','J','J','A','S'];m.forEach((val,i)=>{const g=ease((p-.25-i*.02)/.35),bh=val/79*200*g,x=640+i*64;c.fillStyle='#00A1DE';rr(c,x,560-bh,40,bh,4);c.fill();T(c,mo[i],x+20,595,20,'rgba(255,255,255,.75)',{a:'center',f:MONO});if(g>.95)T(c,String(val),x+20,550-bh,18,'#fff',{a:'center',f:MONO});});
   ap(c,p,.65,()=>{T(c,'Approach phase 47.2%  ·  Landing 16.6%',90,420,30,'#fff',{w:500});});};
-S.fsi=(c,p,t)=>{gbg(c,t,'FSI events per 10K flights · Jan–Aug 2026');T(c,'102,947 flights  ·  313 FSI events',90,190,34,'#fff',{w:700});
+S.fsi=(c,p,t)=>{gbg(c,t,'FSI events per 10K flights · Jan-Aug 2026');T(c,'102,947 flights  ·  313 FSI events',90,190,34,'#fff',{w:700});
   [['2026 YTD',30.4,'#00A1DE',.15],['3-year avg',24.8,'#8fa3cf',.4]].forEach(([l,v,col,st],i)=>{const g=ease((p-st)/.4),y=270+i*130;T(c,l,90,y+50,28,'rgba(255,255,255,.85)');c.fillStyle='rgba(255,255,255,.08)';rr(c,330,y+12,700,56,6);c.fill();c.fillStyle=col;rr(c,330,y+12,700*(v/35)*g,56,6);c.fill();T(c,(v*g).toFixed(1),1060,y+56,44,'#fff',{w:600,f:MONO});});
   ap(c,p,.7,()=>T(c,'Highest by fleet: B747 · 10.77 per 10K (all categories)',90,600,26,'#7fd8ff'));};
 S.events=(c,p,t)=>{gbg(c,t,'3Q status · FOQA-X: none · Special Events');const ev=[['High vertical acceleration at touchdown','B747 · 1.714G','Lack of captain intervention'],['High vertical acceleration at touchdown','B787 · 2.1G','Late flare'],['Long flare','A321 · L/D 4,120 ft · 17 s','Real-time risk assessment'],['Delayed landing configuration','B787 · Flaps 30 at HAT 436 ft','Rushed or delayed action']];
@@ -794,7 +775,7 @@ S.fd=(c,p)=>{c.fillStyle='#000';c.fillRect(0,0,W,H);c.globalAlpha=clamp(p/.15);T
 S.compliance=(c,p)=>{c.fillStyle='#000';c.fillRect(0,0,W,H);c.globalAlpha=clamp((p-.07)/.15);T(c,'Compliance is not optional.',640,340,66,'#fff',{w:900,a:'center'});c.globalAlpha=clamp((p-.3)/.15);T(c,'It is our absolute standard. Only 100% adherence guarantees total security.',640,420,26,'#c9cfdb',{a:'center'});c.globalAlpha=1;};
 S.title=(c,p,t)=>{navyCard(c,p,t);T(c,'CORPORATE AVIATION SAFETY & SECURITY',110,280,24,'#7fd8ff',{f:MONO,ls:3});T(c,'Pilot Safety Meeting',110,380,86,'#fff',{w:900});c.fillStyle='#00A1DE';c.fillRect(110,410,80+ease(p)*400,7);T(c,'28 OCT 2026 · Bennet Walsh, SVP',110,470,28,'rgba(255,255,255,.8)');};
 S.ending=(c,p,t)=>{navyCard(c,p,t);T(c,'KEEP REPORTING. KEEP TALKING.',110,170,26,'#7fd8ff',{f:MONO,ls:3,w:600});
-  [['SPECIAL EVENT · WITHIN 48 HOURS','SELOYI@koreanair.com  ·  02-2656-6793'],['KPSP · PEER SUPPORT','Every Wednesday 09:00–18:00 · KOC Bldg C, 8F Media Room'],['FOQA & INVESTIGATION QUESTIONS','SELOYOYI@koreanair.com']].forEach((e,i)=>ap(c,p,.05+i*.22,()=>{T(c,e[0],110,280+i*130,20,'#7fd8ff',{f:MONO,ls:2});T(c,e[1],110,322+i*130,34,'#fff',{w:500});}));};
+  [['SPECIAL EVENT · WITHIN 48 HOURS','SELOYI@koreanair.com  ·  02-2656-6793'],['KPSP · PEER SUPPORT','Every Wednesday 09:00-18:00 · KOC Bldg C, 8F Media Room'],['FOQA & INVESTIGATION QUESTIONS','SELOYOYI@koreanair.com']].forEach((e,i)=>ap(c,p,.05+i*.22,()=>{T(c,e[0],110,280+i*130,20,'#7fd8ff',{f:MONO,ls:2});T(c,e[1],110,322+i*130,34,'#fff',{w:500});}));};
 function vignette(c,a){c.fillStyle=RG(c,640,360,840,[[.5,'rgba(0,0,0,0)'],[1,`rgba(0,0,0,${a})`]]);c.fillRect(0,0,W,H);}
 function softShapes(c,arr){for(const[x,y,rx,ry,a]of arr){c.fillStyle=RG(c,x,y,Math.max(rx,ry),[[0,`rgba(8,10,20,${a})`],[.7,`rgba(8,10,20,${a*.8})`],[1,'rgba(8,10,20,0)']]);c.beginPath();c.ellipse(x,y,rx,ry,0,0,TAU);c.fill();}}
 function bokeh(c,t,seed,n,rgb,a){const r=rnd(seed);for(let i=0;i<n;i++){const x=r()*W,y=r()*H*.8,s=10+r()*30;c.fillStyle=`rgba(${rgb},${a*(.4+.6*r())*(.8+.2*Math.sin(t+i))})`;c.beginPath();c.arc(x,y,s,0,TAU);c.fill();}}
@@ -804,7 +785,7 @@ S.chapter=(c,p,t,sh)=>{navyCard(c,p,t);const ch=CHS[sh.ch]||CHS.CH1;T(c,'CHAPTER
 S.compliance=(c,p)=>{c.fillStyle='#000';c.fillRect(0,0,W,H);c.globalAlpha=clamp((p-.07)/.15);T(c,'준수는 선택이 아닙니다.',640,330,68,'#fff',{w:900,a:'center'});T(c,'Compliance is not optional.',640,392,28,'rgba(255,255,255,.7)',{a:'center',f:MONO,w:600});
   c.globalAlpha=clamp((p-.3)/.15);T(c,'100% 준수만이 완전한 보안을 보장합니다.',640,470,32,'#c9cfdb',{a:'center',w:500});c.globalAlpha=1;};
 S.ending=(c,p,t)=>{navyCard(c,p,t);T(c,'KEEP REPORTING. KEEP TALKING.',110,140,22,'#7fd8ff',{f:MONO,ls:3,w:600});T(c,'보고하고, 대화하십시오.',110,210,52,'#fff',{w:900});
-  [['Special Event 보고 · 48시간 이내','SELOYI@koreanair.com  ·  02-2656-6793'],['KPSP 동료 지원','매주 수요일 09:00–18:00 · KOC C동 8층 Media Room'],['FOQA·조사 문의','SELOYOYI@koreanair.com']].forEach((e,i)=>ap(c,p,.05+i*.2,()=>{T(c,e[0],110,312+i*118,22,'#7fd8ff',{w:700});T(c,e[1],110,354+i*118,32,'#fff',{w:500});}));};
+  [['Special Event 보고 · 48시간 이내','SELOYI@koreanair.com  ·  02-2656-6793'],['KPSP 동료 지원','매주 수요일 09:00-18:00 · KOC C동 8층 Media Room'],['FOQA·조사 문의','SELOYOYI@koreanair.com']].forEach((e,i)=>ap(c,p,.05+i*.2,()=>{T(c,e[0],110,312+i*118,22,'#7fd8ff',{w:700});T(c,e[1],110,354+i*118,32,'#fff',{w:500});}));};
 /* B캠 측면 프로필 */
 S.bside=(c,p,t,sh)=>{c.fillStyle=LG(c,0,0,W,0,[[0,'#151b2b'],[.5,'#253049'],[1,'#3a4766']]);c.fillRect(0,0,W,H);
   c.save();c.translate(540,0);c.transform(.62,-.05,0,1,0,30);c.drawImage(blurOf(roomCanvas(sh.slide||3),'rs'+(sh.slide||3),.12),0,-30,W,H+60);c.restore();
@@ -826,8 +807,8 @@ S.foqa=(c,p,t)=>{gbg(c,t,'FOQA · de-identification');
   if(prog>.66){const x=px+96+.65*(pw-120),y=py+28+.54*(ph-56),pl=(t*1.4)%1;c.strokeStyle=`rgba(255,130,130,${1-pl})`;c.lineWidth=3;c.beginPath();c.arc(x,y,12+pl*30,0,TAU);c.stroke();c.fillStyle='#ff8a8a';c.beginPath();c.arc(x,y,7,0,TAU);c.fill();T(c,'EXCEEDANCE',x+18,y-20,16,'#ffc2c2',{f:MONO,w:600});}
   const cx=820,cy=190,cw=370,chh=290;
   ap(c,p,.06,()=>{c.fillStyle='rgba(255,255,255,.08)';rr(c,cx,cy,cw,chh,12);c.fill();c.fillStyle='#00A1DE';c.fillRect(cx,cy,cw,6);T(c,'EVENT RECORD',cx+28,cy+50,16,'#7fd8ff',{f:MONO,ls:2,w:600});
-    const an=clamp((p-.42)/.22);const rows=[['CREW',an<.55?'CAPT. ●. ●●●':'— removed —'],['EMP NO.',an<.75?'●●●●●●':'— removed —'],['FLIGHT',an<.95?'●● ●●●':'— removed —'],['REVIEW ID','A-0000']];
-    rows.forEach(([k,v],i)=>{T(c,k,cx+28,cy+104+i*46,15,'rgba(255,255,255,.6)',{f:MONO});T(c,v,cx+150,cy+104+i*46,19,i===3?'#9ef0c6':(v[0]==='—'?'rgba(255,255,255,.45)':'#fff'),{f:MONO,w:600});});
+    const an=clamp((p-.42)/.22);const rows=[['CREW',an<.55?'CAPT. ●. ●●●':'removed'],['EMP NO.',an<.75?'●●●●●●':'removed'],['FLIGHT',an<.95?'●● ●●●':'removed'],['REVIEW ID','A-0000']];
+    rows.forEach(([k,v],i)=>{T(c,k,cx+28,cy+104+i*46,15,'rgba(255,255,255,.6)',{f:MONO});T(c,v,cx+150,cy+104+i*46,19,i===3?'#9ef0c6':(v==='removed'?'rgba(255,255,255,.45)':'#fff'),{f:MONO,w:600});});
     if(an>0&&an<1){const sy=cy+74+an*170;c.fillStyle='rgba(127,216,255,.28)';c.fillRect(cx+10,sy,cw-20,5);}});
   ap(c,p,.7,()=>{c.fillStyle='rgba(30,200,150,.18)';rr(c,cx,cy+chh+22,cw,64,10);c.fill();T(c,'DE-IDENTIFIED',cx+cw/2,cy+chh+64,26,'#9ef0c6',{a:'center',f:MONO,w:600,ls:3});});};
 /* 그래픽: 조종실 2인 상주 */
@@ -855,7 +836,7 @@ const TYPES={
   text:{ko:'텍스트 카드',en:'Text card',g:'gfx',col:'#5f6a8f'},
   card:{ko:'챕터 카드',en:'Chapter card',g:'gfx',col:'#3e4a85'}
 };
-const CHS={OP:{code:'OP',name:'Opening',ko:'오프닝',slides:'—'},CH1:{code:'CH1',name:'FOQA Reform',ko:'FOQA 운영체계 개편',slides:'1–3'},CH2:{code:'CH2',name:'KPSP · Peer Support',ko:'KPSP 동료 지원 프로그램',slides:'4–5'},CH3:{code:'CH3',name:'FOQA & FSI Dashboard',ko:'FOQA·FSI 대시보드',slides:'6–7'},CH4:{code:'CH4',name:'3Q Status · Investigation',ko:'3분기 현황·국토부 조사',slides:'8–9'},CH5:{code:'CH5',name:'Two-Crew Rule',ko:'조종실 2인 상주 원칙',slides:'10'},END:{code:'END',name:'Ending',ko:'엔딩',slides:'—'}};
+const CHS={OP:{code:'OP',name:'Opening',ko:'오프닝',slides:'-'},CH1:{code:'CH1',name:'FOQA Reform',ko:'FOQA 운영체계 개편',slides:'1-3'},CH2:{code:'CH2',name:'KPSP · Peer Support',ko:'KPSP 동료 지원 프로그램',slides:'4-5'},CH3:{code:'CH3',name:'FOQA & FSI Dashboard',ko:'FOQA·FSI 대시보드',slides:'6-7'},CH4:{code:'CH4',name:'3Q Status · Investigation',ko:'3분기 현황·국토부 조사',slides:'8-9'},CH5:{code:'CH5',name:'Two-Crew Rule',ko:'조종실 2인 상주 원칙',slides:'10'},END:{code:'END',name:'Ending',ko:'엔딩',slides:'-'}};
 const CC={
   speaker:['<b>메인 트랙</b> · A01 원본 그대로 · 볼륨 유지','<b>Main track</b> · A01 as recorded · keep audio'],
   close:['<b>메인 트랙</b> · 분할 후 크기 140% · 얼굴을 화면 중앙으로','<b>Main track</b> · split, scale to 140%, centre the face'],
@@ -870,7 +851,7 @@ const CC={
 };
 const RAW={
 OP:[
- {d:5,t:'inhouse',sc:'takeoff',pr:[.38,.62],ac:'b787_10',lbl:'이륙 슬로모션 (항공기 1컷)',le:'Takeoff in slow motion (aircraft shot 1 of 2)',crew:'②',src:'② 2025,0711 NEW CI 787-10 이륙 HL8574 120P',cc:['<b>오버레이 1</b> · 속도 0.25x (120fps 원본) · 볼륨 0','<b>Overlay 1</b> · speed 0.25x (120 fps source) · volume 0'],kw:'조종사에게 FOQA, 무엇이 달라지나?',kwe:'What changes in FOQA for pilots?',hook:1},
+ {d:5,t:'inhouse',sc:'takeoff',pr:[.38,.62],ac:'b787_10',lbl:'이륙 슬로모션',le:'Takeoff in slow motion',crew:'②',src:'② 2025,0711 NEW CI 787-10 이륙 HL8574 120P',cc:['<b>오버레이 1</b> · 속도 0.25x (120fps 원본) · 볼륨 0','<b>Overlay 1</b> · speed 0.25x (120 fps source) · volume 0'],kw:'조종사에게 FOQA, 무엇이 달라지나?',kwe:'What changes in FOQA for pilots?',hook:1},
  {d:4,t:'ccam',sc:'door',lbl:'회의실 출입문 열림',le:'Meeting room door opens',crew:'C-01'},
  {d:4,t:'ccam',sc:'screen',lbl:'스크린 타이틀 점등',le:'Title slide lights up',crew:'C-03',cc:['<b>오버레이 1</b> · 점등 순간에 전환 · 화이트 플래시 0.3초','<b>Overlay 1</b> · cut on the light-up · 0.3 s white flash']},
  {d:4,t:'ccam',sc:'wide',slide:0,lbl:'후방 전경 (청중 뒷모습)',le:'Wide from the rear (audience from behind)',crew:'C-05'},
@@ -899,9 +880,9 @@ CH2:[
  {d:7,t:'ccam',sc:'coffee',lbl:'책상 위 커피잔 2개',le:'Two coffee cups on a desk',crew:'C-06',sub:'And connects you to professional support when you need it.',sk:'필요하면 전문 상담으로도 연결해 드립니다.'},
  {d:7,t:'side',sc:'bside',slide:4,lbl:'측면 · 자발·비밀 보장',le:'Side · voluntary and confidential',crew:'B-01',sub:'It is voluntary, and it is confidential.',sk:'참여는 자발적이며, 비밀이 보장됩니다.'},
  {d:12,t:'speaker',sc:'close',slide:4,lbl:'비밀보장 강조',le:'Confidentiality, emphasis',crew:'A-02',kw:'익명 100% 보장',kwe:'100% ANONYMITY',sub:'No HR disadvantage. Nothing leaves the Safe Zone.',sk:'인사상 불이익은 없습니다. 어떤 내용도 Safe Zone 밖으로 나가지 않습니다.'},
- {d:10,t:'graphic',sc:'roadmap',lbl:'추진 로드맵 STEP 1~4',le:'Roadmap, steps 1–4',crew:'GFX04',sub:'We soft-launched on October 7th. The official launch is planned for the fourth quarter.',sk:'10월 7일 시범 운영을 시작했고, 4분기에 정식 출범할 예정입니다.'},
+ {d:10,t:'graphic',sc:'roadmap',lbl:'추진 로드맵 STEP 1~4',le:'Roadmap, steps 1-4',crew:'GFX04',sub:'We soft-launched on October 7th. The official launch is planned for the fourth quarter.',sk:'10월 7일 시범 운영을 시작했고, 4분기에 정식 출범할 예정입니다.'},
  {d:7,t:'ccam',sc:'building',lbl:'KOC C동 외경 틸트 업',le:'KOC Building C, tilt up',crew:'C-08',sub:'You can find us every Wednesday.',sk:'매주 수요일에 찾아오시면 됩니다.'},
- {d:6,t:'ccam',sc:'sign',lbl:'8층 Media Room 표지',le:'8F Media Room sign',crew:'C-09',lower:'KPSP · 매주 수요일 09:00–18:00 · KOC C동 8층 Media Room',sub:'Eighth floor of KOC Building C, in the media room behind the elevators.',sk:'KOC C동 8층, 엘리베이터 뒤편 미디어룸입니다.'},
+ {d:6,t:'ccam',sc:'sign',lbl:'8층 Media Room 표지',le:'8F Media Room sign',crew:'C-09',lower:'KPSP · 매주 수요일 09:00-18:00 · KOC C동 8층 Media Room',sub:'Eighth floor of KOC Building C, in the media room behind the elevators.',sk:'KOC C동 8층, 엘리베이터 뒤편 미디어룸입니다.'},
  {d:8,t:'ccam',sc:'phone',lbl:'KPSP 인트로 페이지 화면 녹화',le:'KPSP intro page, screen recording',crew:'C-10',sub:'Four of six newsletter issues are already on the intro page.',sk:'뉴스레터 6호 중 4호가 이미 인트로 페이지에 올라와 있습니다.'},
  {d:12,t:'speaker',sc:'mid',slide:5,lbl:'이용 독려',le:'Encouraging use',crew:'A-01',sub:"You don't need a specific reason to reach out.",sk:'연락하는 데 특별한 이유는 필요 없습니다.'},
  {d:10,t:'side',sc:'bside',slide:5,lbl:'측면 · 조기 대화의 의미',le:'Side · why talking early matters',crew:'B-01',sub:'Talking early is how we keep each other safe in the air.',sk:'일찍 털어놓는 것이 하늘에서 서로를 지키는 방법입니다.'},
@@ -911,10 +892,10 @@ CH3:[
  {d:3,t:'card',sc:'chapter',lbl:'챕터 카드',le:'Chapter card',crew:'편집'},
  {d:12,t:'speaker',sc:'mid',slide:6,lbl:'데이터 개요',le:'Data overview',crew:'A-01',sub:"Let's look at the data from January to September.",sk:'1월부터 9월까지의 데이터를 보겠습니다.'},
  {d:10,t:'side',sc:'bside',slide:6,lbl:'측면 · 전 기단 이벤트 수',le:'Side · fleet-wide event count',crew:'B-01',sub:'Across our fleet, 494 FOQA events were confirmed.',sk:'전 기단에서 FOQA 이벤트 494건이 확인됐습니다.'},
- {d:10,t:'graphic',sc:'count494',lbl:'TTL 494 카운트업 + 월별',le:'494 total count-up and months',crew:'GFX05',note:['기간 표기 필수: Jan–Sep 2026','Show the period: Jan–Sep 2026'],sub:'Approach was the largest phase, at about 47 percent.',sk:'비행 단계별로는 접근 단계가 약 47%로 가장 많았습니다.'},
+ {d:10,t:'graphic',sc:'count494',lbl:'TTL 494 카운트업 + 월별',le:'494 total count-up and months',crew:'GFX05',note:['기간 표기 필수: Jan-Sep 2026','Show the period: Jan-Sep 2026'],sub:'Approach was the largest phase, at about 47 percent.',sk:'비행 단계별로는 접근 단계가 약 47%로 가장 많았습니다.'},
  {d:12,t:'speaker',sc:'close',slide:6,lbl:'주요 이벤트 유형',le:'Main event types',crew:'A-02',sub:'Excessive bank during climb and GPWS glideslope led the event list.',sk:'상승 중 과도한 뱅크와 GPWS 글라이드슬로프가 가장 많았습니다.'},
  {d:9,t:'side',sc:'bside',slide:6,lbl:'측면 · 주요 위험 요인',le:'Side · main hazard',crew:'B-01',sub:'Gusty conditions were the most common hazard.',sk:'가장 흔한 위험 요인은 돌풍이었습니다.'},
- {d:10,t:'graphic',sc:'fsi',lbl:'FSI 30.4 vs 3년 평균 24.8',le:'FSI 30.4 vs three-year average 24.8',crew:'GFX06',note:['기간 표기 필수: Jan–Aug 2026','Show the period: Jan–Aug 2026'],sub:'Our FSI rate through August is 30.4 per ten thousand flights.',sk:'8월까지 FSI 비율은 1만 편당 30.4건입니다.'},
+ {d:10,t:'graphic',sc:'fsi',lbl:'FSI 30.4 vs 3년 평균 24.8',le:'FSI 30.4 vs three-year average 24.8',crew:'GFX06',note:['기간 표기 필수: Jan-Aug 2026','Show the period: Jan-Aug 2026'],sub:'Our FSI rate through August is 30.4 per ten thousand flights.',sk:'8월까지 FSI 비율은 1만 편당 30.4건입니다.'},
  {d:7,t:'speaker',sc:'mid',slide:7,lbl:'평균 대비 수준',le:'Against the average',crew:'A-01',sub:'That is above our three-year average of 24.8.',sk:'최근 3년 평균 24.8건보다 높은 수준입니다.'},
  {d:7,t:'ccam',sc:'audience',slide:7,lbl:'청중 뒷모습 + 발표자 원거리',le:'Audience from behind, presenter in the distance',crew:'C-07',sub:'By fleet, the B747 shows the highest overall rate.',sk:'기종별로는 B747의 전체 비율이 가장 높습니다.'},
  {d:12,t:'speaker',sc:'close',slide:7,lbl:'수치의 의미',le:'What the numbers mean',crew:'A-02',sub:'These numbers are not about blame. They show us where to focus.',sk:'이 수치는 책임을 묻기 위한 것이 아닙니다. 어디에 집중할지를 보여 줍니다.'},
@@ -942,19 +923,16 @@ CH5:[
  {d:12,t:'side',sc:'bside',slide:10,lbl:'측면 · 배경 설명',le:'Side · background',crew:'B-01',sub:'After 2001, reinforced doors stopped hijackers, and created a new risk.',sk:'2001년 이후 강화된 조종실 문은 납치범을 막았지만, 새로운 위험도 만들었습니다.'},
  {d:12,t:'text',sc:'gw',lbl:'2015 Germanwings 텍스트 카드',le:'2015 Germanwings text card',crew:'GFX09',cc:['<b>오버레이 2</b> · 검정 배경 텍스트 · <b>오디오 2</b> BGM 0','<b>Overlay 2</b> · black text card · <b>Audio 2</b> music off'],note:['사고 재현·뉴스 영상 사용 금지','No reconstructions or news footage'],sub:'In 2015, a sole occupant locked the captain out. 150 people died.',sk:'2015년, 조종실에 혼자 남은 조종사가 기장을 막아섰고 150명이 숨졌습니다.'},
  {d:8,t:'text',sc:'fd',lbl:'Flydubai 텍스트 카드',le:'Flydubai text card',crew:'GFX10',note:['사실관계 확인 후 자막 확정','Fact-check before the subtitle is final'],sub:'A recent case showed the insider threat is still real.',sk:'최근 사례는 내부자 위협이 여전히 실재함을 보여 줍니다.'},
- {d:12,t:'speaker',sc:'emphasis',slide:10,lbl:'무예외 원칙 · 강조 제스처',le:'Zero exceptions · emphasis gesture',crew:'A-01',kw:'예외 없음',kwe:'ZERO EXCEPTIONS',sub:'So there are no exceptions. Not one.',sk:'그래서 예외는 없습니다. 단 한 번도.'},
- {d:10,t:'graphic',sc:'twocrew',lbl:'조종실 2인 상주 애니메이션',le:'Two-Crew Rule animation',crew:'GFX11',sub:'Whenever a pilot leaves the controls, an authorized cabin crew member steps in.',sk:'조종사가 자리를 비우면, 지정된 객실승무원이 조종실에 들어갑니다.'},
+ {d:14,t:'speaker',sc:'emphasis',slide:10,lbl:'무예외 원칙 · 강조 제스처',le:'Zero exceptions · emphasis gesture',crew:'A-01',kw:'예외 없음',kwe:'ZERO EXCEPTIONS',sub:'So there are no exceptions. Not one.',sk:'그래서 예외는 없습니다. 단 한 번도.'},
+ {d:14,t:'graphic',sc:'twocrew',lbl:'조종실 2인 상주 애니메이션',le:'Two-Crew Rule animation',crew:'GFX11',sub:'Whenever a pilot leaves the controls, an authorized cabin crew member steps in.',sk:'조종사가 자리를 비우면, 지정된 객실승무원이 조종실에 들어갑니다.'},
  {d:10,t:'ai',sc:'cabin',lbl:'객실 통로 끝 닫힌 조종실 도어',le:'Closed flight deck door at the end of the aisle',crew:'AI-4',src:'AI-4 Google Flow (Veo 3.1 Fast)',note:['원거리·흐림 처리, 도어 세부 형상 비노출','Keep it distant and soft; no door details'],sub:'Two people in the flight deck, unbroken.',sk:'조종실에는 언제나 두 사람이 있어야 합니다.'},
- {d:12,t:'speaker',sc:'mid',slide:10,lbl:'객실승무원 역할',le:'The cabin crew role',crew:'A-01',sub:'Cabin crew inside are not bystanders. They monitor the door controls.',sk:'조종실 안의 객실승무원은 방관자가 아닙니다. 도어 조작을 지켜봅니다.'},
- {d:8,t:'side',sc:'bside',slide:10,lbl:'측면 · 공동 책임',le:'Side · shared accountability',crew:'B-01',sub:'Every one of us is accountable for this.',sk:'우리 모두에게 책임이 있습니다.'},
- {d:12,t:'speaker',sc:'mid',slide:10,lbl:'자기 통제 당부',le:'Stopping shortcuts',crew:'A-01',sub:'If you see a shortcut, stop it.',sk:'절차를 건너뛰는 모습을 보면, 멈추게 하십시오.'},
- {d:10,t:'side',sc:'bsil',slide:10,lbl:'역광 실루엣 · 완전 준수',le:'Silhouette · full compliance',crew:'B-02',cc:CC.bsil,sub:'Only full compliance gives full security.',sk:'완전한 준수만이 완전한 보안을 만듭니다.'},
- {d:12,t:'speaker',sc:'close',slide:10,lbl:'마무리 인사',le:'Closing thanks',crew:'A-02',sub:'Thank you for keeping each other safe.',sk:'서로의 안전을 지켜 주셔서 감사합니다.'},
- {d:14,t:'text',sc:'compliance',lbl:'마무리 문장 풀스크린',le:'Closing line, full screen',crew:'GFX12'}],
+ {d:16,t:'speaker',sc:'mid',slide:10,lbl:'객실승무원 역할',le:'The cabin crew role',crew:'A-01',sub:'Cabin crew inside are not bystanders. They monitor the door controls.',sk:'조종실 안의 객실승무원은 방관자가 아닙니다. 도어 조작을 지켜봅니다.'},
+ {d:12,t:'side',sc:'bside',slide:10,lbl:'측면 · 공동 책임',le:'Side · shared accountability',crew:'B-01',sub:'Every one of us is accountable for this.',sk:'우리 모두에게 책임이 있습니다.'},
+ {d:16,t:'speaker',sc:'mid',slide:10,lbl:'자기 통제 당부',le:'Stopping shortcuts',crew:'A-01',sub:'If you see a shortcut, stop it.',sk:'절차를 건너뛰는 모습을 보면, 멈추게 하십시오.'},
+ {d:18,t:'speaker',sc:'close',slide:10,lbl:'마무리 인사',le:'Closing thanks',crew:'A-02',sub:'Thank you for keeping each other safe.',sk:'서로의 안전을 지켜 주셔서 감사합니다.'}],
 END:[
- {d:6,t:'ccam',sc:'lightsoff',lbl:'빈 회의실 소등',le:'Lights off in the empty room',crew:'C-11',cc:['<b>오버레이 1</b> · <b>오디오 2</b> 엔딩 BGM 인','<b>Overlay 1</b> · <b>Audio 2</b> end music in']},
- {d:16,t:'card',sc:'ending',lbl:'엔딩 카드: 보고 채널·KPSP',le:'End card: reporting channels and KPSP',crew:'편집',note:['연락처 최종 확인 후 확정','Confirm contacts before release']},
- {d:8,t:'inhouse',sc:'takeoff',pr:[.62,.98],ac:'b787_10',sky:'dawn',lbl:'상승 장면 + 페이드 아웃 (항공기 2컷 중 2)',le:'Climb-out and fade (aircraft shot 2 of 2)',crew:'②',src:'② 2025,0711 NEW CI 787-10 이륙 HL8574 120P',cc:['<b>오버레이 1</b> · 0.25x · 끝 2초 페이드 아웃','<b>Overlay 1</b> · 0.25x · 2 s fade out']}]};
+ {d:22,t:'card',sc:'ending',lbl:'엔딩 카드: 보고 채널·KPSP',le:'End card: reporting channels and KPSP',crew:'편집',note:['연락처 최종 확인 후 확정','Confirm contacts before release']},
+ {d:8,t:'inhouse',sc:'takeoff',pr:[.62,.98],ac:'b787_10',sky:'dawn',lbl:'상승 장면 + 페이드 아웃',le:'Climb-out and fade',crew:'②',src:'② 2025,0711 NEW CI 787-10 이륙 HL8574 120P',cc:['<b>오버레이 1</b> · 0.25x · 끝 2초 페이드 아웃','<b>Overlay 1</b> · 0.25x · 2 s fade out']}]};
 const SHOTS=[],CHAPS=[];let acc=0;
 Object.keys(RAW).forEach(k=>{const s0=acc;RAW[k].forEach(s=>{s.ch=k;s.s=acc;s.e=acc+s.d;acc=s.e;s.i=SHOTS.length;SHOTS.push(s);});CHAPS.push(Object.assign({s:s0,e:acc},CHS[k]));});
 const TT=acc;
@@ -1001,7 +979,7 @@ function shotAt(x){if(cur>=0&&x>=SHOTS[cur].s&&x<SHOTS[cur].e)return cur;for(let
 function who(s){const en=LANG==='en';return s.t==='speaker'?(s.crew==='A-02'?(en?'Crew 1 · A cam (crop in edit)':'촬영① A캠 (편집 크롭)'):(en?'Crew 1 · A cam':'촬영① A캠')):s.t==='side'?(en?'Crew 2 · B cam':'촬영② B캠'):s.t==='ccam'?(en?'Crew 3 · C cam':'촬영③ C캠'):s.t==='inhouse'?(en?'In-house footage (Communications)':'사내 영상 (커뮤니케이션지원팀)'):s.t==='ai'?(en?'AI clip (Google Flow)':'AI 클립 (Google Flow)'):(en?'Made in the edit':'편집 담당 제작');}
 function ccOf(s){if(s.cc)return LX(s.cc);if(s.t==='speaker'&&s.sc==='close')return LX(CC.close);return LX(CC[s.t==='side'?'side':s.t]);}
 function cueUpdate(i){const s=SHOTS[i],en=LANG==='en';const ch=$('cueType');ch.querySelector('i').style.background=tcol(s.t);ch.querySelector('span').textContent=LX([TYPES[s.t].ko,TYPES[s.t].en]);
-  $('cueTime').textContent=`${fmt(s.s)}–${fmt(s.e)} · ${s.d}${en?' s':'초'}`;$('cueTitle').textContent=en?s.le:s.lbl;const c=CHS[s.ch];
+  $('cueTime').textContent=`${fmt(s.s)}-${fmt(s.e)} · ${s.d}${en?' s':'초'}`;$('cueTitle').textContent=en?s.le:s.lbl;const c=CHS[s.ch];
   $('cueCh').textContent=`${c.code} ${en?c.name:c.ko}`+(s.slide?(en?` · slide ${s.slide}`:` · 슬라이드 ${s.slide}`):'');
   $('cueSrc').textContent=`${s.crew==='편집'?(en?'Edit':'편집'):s.crew} · ${who(s)}`+(s.src?` · ${s.src}`:'');
   $('cueCC').innerHTML=ccOf(s);
@@ -1023,7 +1001,7 @@ $('scrub').max=TT;$('scrub').addEventListener('input',e=>seek(parseFloat(e.targe
 $('srcTog').addEventListener('change',e=>{showSrc=e.target.checked;renderMon();});
 document.querySelectorAll('.seg button').forEach(b=>b.addEventListener('click',()=>{speed=+b.dataset.sp;document.querySelectorAll('.seg button').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));}));
 
-function seg(lane,s,e,col,label,extra,cls){const d=document.createElement('div');d.className='sg'+(cls?' '+cls:'');d.style.left=pct(s);d.style.width=`calc(${pct(e-s)} - 1px)`;d.style.background=col;d.textContent=label||'';d.title=`${fmt(s)}–${fmt(e)} ${label||''}`;if(extra)Object.assign(d.dataset,extra);lane.appendChild(d);return d;}
+function seg(lane,s,e,col,label,extra,cls){const d=document.createElement('div');d.className='sg'+(cls?' '+cls:'');d.style.left=pct(s);d.style.width=`calc(${pct(e-s)} - 1px)`;d.style.background=col;d.textContent=label||'';d.title=`${fmt(s)}-${fmt(e)} ${label||''}`;if(extra)Object.assign(d.dataset,extra);lane.appendChild(d);return d;}
 function buildTimeline(){const en=LANG==='en';
   ['lnCh','lnKw','lnCap','lnCapE','lnO2','lnO1','lnMain','lnA1','lnA2'].forEach(id=>$(id).innerHTML='');
   CHAPS.forEach(c=>{const d=document.createElement('div');d.className='chm';d.dataset.ch=c.code;d.style.left=pct(c.s);d.style.width=pct(c.e-c.s);d.innerHTML=`<b>${c.code}</b>${esc(en?c.name:c.ko)}`;$('lnCh').appendChild(d);});
@@ -1043,7 +1021,6 @@ function buildTimeline(){const en=LANG==='en';
   if(cur>=0){const c0=cur;cur=-1;cur=c0;cueUpdate(c0);}}
 (function laneDrag(){let drag=false;const fromEv=ev=>{const r=$('lnMain').getBoundingClientRect();return (ev.clientX-r.left)/r.width*TT;};
   document.querySelectorAll('#tlGrid .lane').forEach(l=>{l.addEventListener('pointerdown',ev=>{drag=true;try{l.setPointerCapture(ev.pointerId);}catch(e){}seek(fromEv(ev));});l.addEventListener('pointermove',ev=>{if(drag)seek(fromEv(ev));});l.addEventListener('pointerup',()=>drag=false);l.addEventListener('pointercancel',()=>drag=false);});})();
-const AC_BEFORE={n:13,s:111};
 function buildPlan(){const en=LANG==='en';const tb=$('chBody');tb.innerHTML='';
   CHAPS.forEach(c=>{const tr=document.createElement('tr');tr.className='jump';tr.tabIndex=0;tr.innerHTML=`<td class="mono">${fmt(c.s)}</td><td><b>${c.code}</b> ${esc(en?c.name:c.ko)}<div class="muted small">${esc(en?c.ko:c.name)}</div></td><td class="c mono">${c.slides}</td><td class="c mono">${fmt(c.e-c.s)}</td>`;
     const go=()=>{seek(c.s);mon.scrollIntoView({behavior:'smooth',block:'center'});};tr.addEventListener('click',go);tr.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});tb.appendChild(tr);});
@@ -1055,40 +1032,37 @@ function buildPlan(){const en=LANG==='en';const tb=$('chBody');tb.innerHTML='';
   const A=[['front',['정면','Front'],'#0b4f9c',50],['side',['측면','Side'],'#0a7f9e',30],['close',['클로즈업','Close-up'],'#3c4f86',20]];
   const as={front:0,side:0,close:0};SHOTS.forEach(s=>{if(s.t==='side')as.side+=s.d;else if(s.t==='speaker')as[s.sc==='close'?'close':'front']+=s.d;});const tot=as.front+as.side+as.close;
   const av=A.map(a=>Math.round(as[a[0]]/tot*1000)/10);
-  $('angBars').innerHTML=row(en?'Actual':'실측',av,A)+row(en?'Plan':'목표',A.map(a=>a[3]),A)+`<div class="muted small">${A.map((a,i)=>`<span class="chip" style="margin-right:6px"><i style="background:${a[2]}"></i>${esc(LX(a[1]))} ${av[i]}%</span>`).join('')}</div>`;
-  const ac=SHOTS.filter(s=>s.sc==='takeoff'||s.sc==='landing');const acs=ac.reduce((a,b)=>a+b.d,0);
-  $('baBefore').textContent=en?`${AC_BEFORE.n} shots · ${fmt(AC_BEFORE.s)}`:`${AC_BEFORE.n}컷 · 약 ${Math.floor(AC_BEFORE.s/60)}분 ${AC_BEFORE.s%60}초`;
-  $('baAfter').textContent=en?`${ac.length} shots · ${fmt(acs)}`:`${ac.length}컷 · ${acs}초`;}
+  $('angBars').innerHTML=row(en?'Actual':'실측',av,A)+row(en?'Plan':'목표',A.map(a=>a[3]),A)+`<div class="muted small">${A.map((a,i)=>`<span class="chip" style="margin-right:6px"><i style="background:${a[2]}"></i>${esc(LX(a[1]))} ${av[i]}%</span>`).join('')}</div>`;}
 
 /* ===== 6. 담당자별 촬영 지시 ===== */
 const WHEN={before:['회의 전','Before'],during:['회의 중','During'],after:['회의 후','After'],edit:['편집','Edit'],pre:['회의 직전','Just before'],appr:['승인 시','If approved']};
 const CREW=[
  {id:'A',tab:['촬영① A캠 · 정면·총괄','Crew 1 · A cam (front, lead)'],who:['직원 1','Staff 1'],
-  mission:[['발표 전 구간(09:44~10:15) 정면 촬영, 30분 무정지','Film the whole talk from the front (09:44–10:15), no stops'],['촬영 총괄: 3대 화이트밸런스 통일, 녹화 시작 신호, 박수 싱크 확인','Lead: match white balance on all three, call the start, check the sync clap'],['무선 핀마이크 수신기를 A캠에 연결해 주 음성 확보','Connect the lapel-mic receiver to A cam for the main audio']],
-  set:[[['해상도','Resolution'],['UHD 4K · 30fps (편집 시 140% 크롭용)','UHD 4K · 30fps (room for a 140% crop)']],[['모드','Mode'],['프로 동영상 · 셔터 1/60 · ISO 100~400','Pro Video · 1/60 shutter · ISO 100–400']],[['WB·초점','WB / focus'],['수동 고정(3대 동일값) · 발표자 터치 후 AF 고정','Manual, same on all three · tap the presenter and lock AF']],[['손떨림','Stabiliser'],['거치 시 OFF · 손으로 들 때 ON','Off when mounted · on when hand-held']],[['기기','Device'],['비행기 모드 + 방해금지 · 저장공간 25GB 이상 · 보조배터리 연결','Airplane mode + Do Not Disturb · 25 GB free · power bank']]],
+  mission:[['발표 전 구간(09:44~10:15) 정면 촬영, 30분 무정지','Film the whole talk from the front (09:44-10:15), no stops'],['촬영 총괄: 3대 화이트밸런스 통일, 녹화 시작 신호, 박수 싱크 확인','Lead: match white balance on all three, call the start, check the sync clap'],['무선 핀마이크 수신기를 A캠에 연결해 주 음성 확보','Connect the lapel-mic receiver to A cam for the main audio']],
+  set:[[['해상도','Resolution'],['UHD 4K · 30fps (편집 시 140% 크롭용)','UHD 4K · 30fps (room for a 140% crop)']],[['모드','Mode'],['프로 동영상 · 셔터 1/60 · ISO 100~400','Pro Video · 1/60 shutter · ISO 100-400']],[['WB·초점','WB / focus'],['수동 고정(3대 동일값) · 발표자 터치 후 AF 고정','Manual, same on all three · tap the presenter and lock AF']],[['손떨림','Stabiliser'],['거치 시 OFF · 손으로 들 때 ON','Off when mounted · on when hand-held']],[['기기','Device'],['비행기 모드 + 방해금지 · 저장공간 25GB 이상 · 보조배터리 연결','Airplane mode + Do Not Disturb · 25 GB free · power bank']]],
   shots:[
    {code:'A-01',title:['발표자 정면 미디엄샷','Presenter, front medium'],when:'during',req:1,sc:'mid',sh:{slide:1,sub:'x'},size:['미디엄샷(MS) · 허리 위','Medium shot · waist up'],angle:['정면 · 발표자 눈높이','Front · eye level'],move:['고정 · 줌·이동 금지 · 30분 무정지','Locked off · no zoom or moves · 30 min'],use:['정면 컷 (발표자 화면의 약 50%)','Front cuts (≈50% of presenter time)'],
     guide:{grid:1,safe:1,boxes:[[600,90,560,630,['발표자: 우측 1/3 지점','Presenter on the right third'],'#00A1DE']],hl:[[230,['눈높이 = 상단 1/3선','Eyes on the upper third']]],brk:[[96,['헤드룸 약 13%','Headroom ≈13%']]],arrows:[[560,420,170,420,['시선·제스처 방향(스크린 쪽) 여백','Space toward the screen']]]}},
-   {code:'A-02',title:['클로즈업 (촬영 안 함 · 크롭 확인)','Close-up (not filmed · crop check)'],when:'edit',req:0,sc:'mid',sh:{slide:3,sub:'x'},size:['A-01 원본을 편집에서 140% 크롭','A-01 cropped to 140% in the edit'],angle:['—','—'],move:['4K로 찍었으므로 줌 대신 크롭','Shot in 4K, so crop instead of zoom'],use:['강조 발언·키워드 구간 (발표자 화면의 약 20%)','Key lines and keywords (≈20% of presenter time)'],
+   {code:'A-02',title:['클로즈업 (촬영 안 함 · 크롭 확인)','Close-up (not filmed · crop check)'],when:'edit',req:0,sc:'mid',sh:{slide:3,sub:'x'},size:['A-01 원본을 편집에서 140% 크롭','A-01 cropped to 140% in the edit'],angle:['-','-'],move:['4K로 찍었으므로 줌 대신 크롭','Shot in 4K, so crop instead of zoom'],use:['강조 발언·키워드 구간 (발표자 화면의 약 20%)','Key lines and keywords (≈20% of presenter time)'],
     guide:{crop:[343,92,914,514,['편집 시 140% 크롭 범위 → 클로즈업','140% crop area → close-up']],notes:[[60,680,['A캠에서 줌을 쓰면 크롭 여유가 사라짐','Zooming on A cam removes the crop margin']]]}},
    {code:'A-03',title:['녹화 시작 · 박수 싱크','Roll and sync clap'],when:'pre',req:1,sc:'clap',size:['화면 중앙에 손이 보이게','Hands in the centre of frame'],angle:['정면','Front'],move:['녹화 시작 → 10초 테스트 발화 → 박수 1회','Roll → 10 s test speech → one clap'],use:['CapCut 3대 동기화 기준점','Sync point for the three cameras in CapCut'],
     guide:{grid:1,safe:1,boxes:[[390,170,500,420,['A·B캠 화면 안에서 박수','Clap inside the A and B frames'],'#ff4d5e']]}}]},
  {id:'B',tab:['촬영② B캠 · 측면·오디오','Crew 2 · B cam (side, audio)'],who:['직원 2','Staff 2'],
-  mission:[['발표 전 구간 측면 프로필 연속 촬영 (발표자 옆 벽면, 발표자와 같은 높이)','Film the whole talk in profile from the side wall, at the presenter\'s height'],['슬라이드 7·10 구간에 역광 실루엣 컷 각 10~15초: 노출 기준을 스크린으로 옮겼다가 원복','Silhouette takes of 10–15 s during slides 7 and 10: meter on the screen, then switch back'],['백업 녹음(4번째 휴대폰)과 핀마이크 부착·회수','Run the backup recorder (4th phone) and fit/collect the lapel mic']],
+  mission:[['발표 전 구간 측면 프로필 연속 촬영 (발표자 옆 벽면, 발표자와 같은 높이)','Film the whole talk in profile from the side wall, at the presenter\'s height'],['슬라이드 7·10 구간에 역광 실루엣 컷 10~15초: 노출 기준을 스크린으로 옮겼다가 원복','Silhouette takes of 10-15 s during slides 7 and 10: meter on the screen, then switch back'],['백업 녹음(4번째 휴대폰)과 핀마이크 부착·회수','Run the backup recorder (4th phone) and fit/collect the lapel mic']],
   set:[[['해상도','Resolution'],['UHD 4K · 30fps','UHD 4K · 30fps']],[['모드','Mode'],['프로 동영상 · 셔터 1/60 · WB는 A캠과 동일값','Pro Video · 1/60 shutter · WB same as A cam']],[['렌즈','Lens'],['1x 또는 광학 2x · 초광각·디지털 줌 금지','1x or 2x optical · no ultra-wide or digital zoom']],[['노출','Exposure'],['얼굴 기준 AE 고정 · 실루엣 구간만 스크린 기준','AE locked on the face · on the screen only for silhouettes']],[['녹음','Audio'],['음성 녹음 앱 · 품질 높음 · 비행기 모드','Voice recorder app · high quality · airplane mode']]],
   shots:[
    {code:'B-01',title:['발표자 측면 프로필 미디엄샷','Presenter, side profile medium'],when:'during',req:1,sc:'bside',sh:{slide:3,sub:'x'},size:['미디엄샷 · 허리 위','Medium · waist up'],angle:['발표자 옆 90° · 눈높이','90° to the presenter · eye level'],move:['고정 · 30분 무정지','Locked off · 30 min'],use:['정면 컷과 교차 (발표자 화면의 약 30%)','Intercut with the front (≈30% of presenter time)'],
     guide:{grid:1,safe:1,boxes:[[680,30,380,690,['발표자: 우측 1/3','Presenter on the right third'],'#00A1DE']],hl:[[200,['눈높이 = 상단 1/3선','Eyes on the upper third']]],arrows:[[660,330,200,330,['시선 방향(청중 쪽) 여백','Space in the looking direction']]]}},
-   {code:'B-02',title:['역광 실루엣 (스크린을 등진 측면)','Backlit silhouette against the screen'],when:'during',req:1,sc:'bsil',size:['미디엄샷','Medium'],angle:['측면 · 스크린이 뒤로 걸리게','Side, with the screen behind'],move:['고정 · 슬라이드 7·10 구간 10~15초','Locked off · 10–15 s during slides 7 and 10'],use:['챕터 전환·마무리 멘트','Chapter transitions and closing lines'],
+   {code:'B-02',title:['역광 실루엣 (스크린을 등진 측면)','Backlit silhouette against the screen'],when:'during',req:1,sc:'bsil',size:['미디엄샷','Medium'],angle:['측면 · 스크린이 뒤로 걸리게','Side, with the screen behind'],move:['고정 · 슬라이드 7·10 구간 10~15초','Locked off · 10-15 s during slides 7 and 10'],use:['챕터 전환·마무리 멘트','Chapter transitions and closing lines'],
     guide:{grid:1,safe:1,boxes:[[600,30,500,690,['실루엣: 얼굴 식별 불가','Silhouette: face not identifiable'],'#00A1DE']]}},
-   {code:'B-03',title:['백업 녹음 (연단 위 휴대폰)','Backup audio (phone on the lectern)'],when:'during',req:1,sc:'recorder',size:['—','—'],angle:['마이크 구멍이 발표자 쪽','Mic facing the presenter'],move:['09:43 녹음 시작, 종료 후 정지','Start at 09:43, stop after the talk'],use:['오디오 1 예비 음성 · 자막 작성용','Spare for audio 1 · subtitle drafting'],
+   {code:'B-03',title:['백업 녹음 (연단 위 휴대폰)','Backup audio (phone on the lectern)'],when:'during',req:1,sc:'recorder',size:['-','-'],angle:['마이크 구멍이 발표자 쪽','Mic facing the presenter'],move:['09:43 녹음 시작, 종료 후 정지','Start at 09:43, stop after the talk'],use:['오디오 1 예비 음성 · 자막 작성용','Spare for audio 1 · subtitle drafting'],
     guide:{boxes:[[440,40,400,640,['발표자에서 1m 이내','Within 1 m of the presenter'],'#00A1DE']]}}]},
  {id:'C',tab:['촬영③ C캠 · 현장','Crew 3 · C cam (on-site)'],who:['직원 3','Staff 3'],
-  mission:[['회의 전(09:15~09:40)·중·후(10:15~10:40) 현장 컷 12개 촬영','Twelve on-site shots before (09:15–09:40), during and after (10:15–10:40)'],['컷당 최소 10초, 시작·끝 2초는 카메라를 멈춘 상태로 유지','At least 10 s per shot; hold still for 2 s at each end'],['회의 중에는 뒤쪽 벽면 동선만 사용(A·B캠 화각 밖), 참석자 얼굴 비노출','During the talk, stay along the rear wall (outside A and B frames); no attendee faces']],
-  set:[[['해상도','Resolution'],['UHD 4K · 30fps','UHD 4K · 30fps']],[['모드','Mode'],['프로 동영상 · 셔터 1/60','Pro Video · 1/60 shutter']],[['손떨림','Stabiliser'],['ON','On']],[['렌즈','Lens'],['1x 또는 광학 망원 · 디지털 줌 금지','1x or optical tele · no digital zoom']],[['움직임','Movement'],['걷지 말고 상체 회전, 2~3초에 30° 이내','Turn from the waist, under 30° per 2–3 s']]],
+  mission:[['회의 전(09:15~09:40)·중·후(10:15~10:40) 현장 컷 촬영','On-site shots before (09:15-09:40), during and after (10:15-10:40)'],['컷당 최소 10초, 시작·끝 2초는 카메라를 멈춘 상태로 유지','At least 10 s per shot; hold still for 2 s at each end'],['회의 중에는 뒤쪽 벽면 동선만 사용(A·B캠 화각 밖), 참석자 얼굴 비노출','During the talk, stay along the rear wall (outside A and B frames); no attendee faces']],
+  set:[[['해상도','Resolution'],['UHD 4K · 30fps','UHD 4K · 30fps']],[['모드','Mode'],['프로 동영상 · 셔터 1/60','Pro Video · 1/60 shutter']],[['손떨림','Stabiliser'],['ON','On']],[['렌즈','Lens'],['1x 또는 광학 망원 · 디지털 줌 금지','1x or optical tele · no digital zoom']],[['움직임','Movement'],['걷지 말고 상체 회전, 2~3초에 30° 이내','Turn from the waist, under 30° per 2-3 s']]],
   shots:[
    {code:'C-01',title:['회의실 출입문 열림','Meeting room door opens'],when:'before',req:1,sc:'door',size:['풀샷','Full shot'],angle:['정면 · 문 중앙','Front · centred on the door'],move:['고정 10초','Locked off, 10 s'],guide:{grid:1,safe:1,boxes:[[460,110,360,500,['문을 화면 중앙에','Door in the centre'],'#00A1DE']]}},
-   {code:'C-02',title:['빈 회의실 전경','Empty room'],when:'before',req:0,sc:'emptyroom',size:['와이드','Wide'],angle:['뒤쪽 모서리','Rear corner'],move:['좌→우 천천히 패닝','Slow pan, left to right'],guide:{grid:1,safe:1,arrows:[[300,650,980,650,['좌→우 패닝 (2~3초에 30°)','Pan left → right (30° per 2–3 s)']]]}},
+   {code:'C-02',title:['빈 회의실 전경','Empty room'],when:'before',req:0,sc:'emptyroom',size:['와이드','Wide'],angle:['뒤쪽 모서리','Rear corner'],move:['좌→우 천천히 패닝','Slow pan, left to right'],guide:{grid:1,safe:1,arrows:[[300,650,980,650,['좌→우 패닝 (2~3초에 30°)','Pan left → right (30° per 2-3 s)']]]}},
    {code:'C-03',title:['스크린 점등·슬라이드 전환','Screen lights up / slide change'],when:'before',req:1,sc:'screen',size:['미디엄','Medium'],angle:['측면 사선 30°','30° to the side'],move:['고정 · 점등 2초 전부터','Locked off · start 2 s before'],use:['오프닝·챕터 전환','Opening and chapter breaks'],guide:{grid:1,safe:1,boxes:[[160,60,900,560,['스크린 전체가 사선으로','Whole screen on a diagonal'],'#00A1DE']]}},
    {code:'C-04',title:['발표자 입장·자료 확인','Presenter arrives'],when:'before',req:0,sc:'entrance',size:['미디엄','Medium'],angle:['정면','Front'],move:['고정 · 발표자 얼굴 허용','Locked off · presenter\'s face is fine'],guide:{grid:1,safe:1,arrows:[[1200,420,860,420,['발표자 입장 방향','Presenter walks in']]]}},
    {code:'C-05',title:['후방 전경 (청중 뒷모습)','Wide from the rear (audience from behind)'],when:'during',req:1,sc:'wide',sh:{slide:4},size:['와이드샷','Wide'],angle:['뒤쪽 모서리 · 서 있는 눈높이','Rear corner · standing eye level'],move:['고정','Locked off'],use:['오프닝 현장감','Sense of place in the opening'],guide:{grid:1,safe:1,boxes:[[250,30,840,470,['발표자와 스크린이 함께','Presenter and screen together'],'#00A1DE'],[0,540,1280,180,['청중: 뒷모습만','Audience from behind only'],'#ff4d5e']]}},
@@ -1096,8 +1070,8 @@ const CREW=[
    {code:'C-07',title:['청중 뒷모습 + 발표자 원거리','Audience from behind, presenter in the distance'],when:'during',req:1,sc:'audience',sh:{slide:8},size:['와이드','Wide'],angle:['청중 뒤 · 앉은 눈높이','Behind the audience · seated eye level'],move:['고정','Locked off'],guide:{grid:1,safe:1,boxes:[[0,470,1280,250,['얼굴 비노출: 뒤통수만','No faces: backs of heads only'],'#ff4d5e'],[330,40,640,360,['발표자·스크린','Presenter and screen'],'#00A1DE']]}},
    {code:'C-08',title:['KOC C동 외경 틸트 업','KOC Building C, tilt up'],when:'after',req:1,sc:'building',size:['와이드','Wide'],angle:['건물 입구 앞','In front of the entrance'],move:['아래→위 틸트 4초','Tilt up over 4 s'],guide:{grid:1,safe:1,arrows:[[1180,620,1180,140,['아래→위 틸트','Tilt up']]]}},
    {code:'C-09',title:['8층 Media Room 표지','8F Media Room sign'],when:'after',req:1,sc:'sign',sh:{label:'MEDIA ROOM'},size:['미디엄','Medium'],angle:['정면','Front'],move:['고정 · 수평 맞춤','Locked off · level'],guide:{grid:1,safe:1,boxes:[[690,160,480,270,['표지판 정면','Sign square-on'],'#00A1DE']]}},
-   {code:'C-10',title:['KPSP 인트로·뉴스레터 화면 녹화','KPSP intro and newsletter, screen recording'],when:'after',req:1,sc:'phone',size:['휴대폰 화면 녹화','Phone screen recording'],angle:['—','—'],move:['천천히 스크롤 8초','Slow 8 s scroll'],guide:{boxes:[[430,30,420,680,['화면 녹화 기능 사용 (촬영 X)','Use screen recording, not the camera'],'#00A1DE']]}},
-   {code:'C-11',title:['빈 회의실 소등','Lights off in the empty room'],when:'after',req:1,sc:'lightsoff',size:['와이드','Wide'],angle:['뒤쪽 모서리','Rear corner'],move:['고정 · 소등 2초 전부터','Locked off · start 2 s before'],use:['엔딩 도입','Lead-in to the ending'],guide:{grid:1,safe:1}},
+   {code:'C-10',title:['KPSP 인트로·뉴스레터 화면 녹화','KPSP intro and newsletter, screen recording'],when:'after',req:1,sc:'phone',size:['휴대폰 화면 녹화','Phone screen recording'],angle:['-','-'],move:['천천히 스크롤 8초','Slow 8 s scroll'],guide:{boxes:[[430,30,420,680,['화면 녹화 기능 사용 (촬영 X)','Use screen recording, not the camera'],'#00A1DE']]}},
+   {code:'C-11',title:['빈 회의실 소등','Lights off in the empty room'],when:'after',req:0,sc:'lightsoff',size:['와이드','Wide'],angle:['뒤쪽 모서리','Rear corner'],move:['고정 · 소등 2초 전부터','Locked off · start 2 s before'],guide:{grid:1,safe:1}},
    {code:'C-12',title:['시뮬레이터 FMS 조작','Simulator FMS entry'],when:'appr',req:0,sc:'fms',size:['클로즈업','Close-up'],angle:['측면 위','From above, to the side'],move:['고정 · 훈련센터 승인 필수','Locked off · training centre approval required'],guide:{grid:1,safe:1,boxes:[[230,20,820,690,['훈련센터 승인 후에만 촬영','Only with training centre approval'],'#ff4d5e']]}}]}
 ];
 function usesOf(code){return SHOTS.filter(s=>s.crew===code).map(s=>fmt(s.s));}
